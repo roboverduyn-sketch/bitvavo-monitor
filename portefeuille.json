@@ -1,17 +1,22 @@
 {
-  "cash": 4600.0,
+  "cash": 4391.188823427596,
   "positions": {
     "SKY-EUR": {
       "buy_price": 0.040593,
       "amount": 4914.671171945731
     },
-    "BLUR-EUR": {
-      "buy_price": 0.006469,
-      "amount": 30839.58059712367
+    "HOT-EUR": {
+      "buy_price": 0.00030508,
+      "amount": 653930.9259302249
+    },
+    "YB-EUR": {
+      "buy_price": 0.04803,
+      "amount": 4153.679926770623
     }
   },
   "alerts": {
     "SKY-EUR": true,
-    "BLUR-EUR": true
+    "HOT-EUR": true,
+    "YB-EUR": true
   }
 }

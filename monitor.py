@@ -86,5 +86,4 @@ def stuur_telegram():
     with urllib.request.urlopen(verzoek, timeout=15) as antwoord:
 
         print("Telegram:", antwoord.status)
-
 stuur_telegram()

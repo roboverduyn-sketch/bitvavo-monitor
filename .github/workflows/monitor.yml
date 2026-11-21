@@ -11,7 +11,11 @@ on:
 permissions:
 
   contents: write
+concurrency:
 
+  group: bitvavo-monitor
+
+  cancel-in-progress: false
 jobs:
 
   monitor:

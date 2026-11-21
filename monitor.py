@@ -49,3 +49,42 @@ def main():
 if __name__ == "__main__":
 
     main()
+import os
+
+import urllib.parse
+
+def stuur_telegram():
+
+    token = os.environ.get("TELEGRAM_BOT_TOKEN")
+
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+
+    if not token or not chat_id:
+
+        print("Telegram-instellingen ontbreken")
+
+        return
+
+    bericht = "Bitvavo-monitor: controle uitgevoerd."
+
+    gegevens = urllib.parse.urlencode({
+
+        "chat_id": chat_id,
+
+        "text": bericht
+
+    }).encode("utf-8")
+
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+
+    verzoek = urllib.request.Request(
+
+        url, data=gegevens, method="POST"
+
+    )
+
+    with urllib.request.urlopen(verzoek, timeout=15) as antwoord:
+
+        print("Telegram:", antwoord.status)
+
+stuur_telegram()

@@ -1,109 +1,321 @@
+
+
 import os
+
 import json
+
 import urllib.request
+
 import urllib.parse
+
 from datetime import datetime, timezone
 
 BASE = "https://api.bitvavo.com/v2"
-MIN_VOLUME_EUR = 100000
-MAX_RESULTS = 5
+
+STATE_FILE = "portefeuille.json"
+
+START_BUDGET = 5000.0
+
+BUY_EUR = 200.0
+
+MAX_POSITIONS = 3
+
+MIN_VOLUME = 250000.0
+
+MIN_RISE = 2.0
+
+MAX_RISE = 6.0
+
+TAKE_PROFIT = 0.05
+
+STOP_LOSS = 0.03
+
+FEE_RATE = 0.0025
 
 def ophalen(endpoint):
-    req = urllib.request.Request(
-        BASE + endpoint,
-        headers={"User-Agent": "BitvavoMonitor/1.0"}
-    )
-    with urllib.request.urlopen(req, timeout=25) as response:
-        return json.load(response)
 
-def getal(waarde):
+    req = urllib.request.Request(
+
+        BASE + endpoint,
+
+        headers={"User-Agent": "BitvavoMonitor/2.0"}
+
+    )
+
+    with urllib.request.urlopen(req, timeout=25) as r:
+
+        return json.load(r)
+
+def getal(value):
+
     try:
-        return float(waarde)
+
+        return float(value)
+
     except (TypeError, ValueError):
+
         return 0.0
 
-def analyseer():
-    markten = ophalen("/markets")
-    tickers = ophalen("/ticker/24h")
-    eur_markten = {
-        m["market"] for m in markten
-        if m.get("quote") == "EUR"
-        and m.get("status") == "trading"
-    }
-
-    resultaten = []
-    for t in tickers:
-        naam = t.get("market", "")
-        if naam not in eur_markten:
-            continue
-
-        koers = getal(t.get("last"))
-        opening = getal(t.get("open"))
-        volume = getal(t.get("volumeQuote"))
-
-        if koers <= 0 or opening <= 0 or volume < MIN_VOLUME_EUR:
-            continue
-
-        verandering = (koers / opening - 1) * 100
-
-        if verandering < 1 or verandering > 12:
-            continue
-
-        score = verandering
-        resultaten.append((score, naam, koers, verandering, volume))
-
-    resultaten.sort(reverse=True)
-    return len(eur_markten), resultaten[:MAX_RESULTS]
-
 def telegram(bericht):
+
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
+
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
 
     if not token or not chat_id:
+
         print("Telegram-instellingen ontbreken")
+
         return
 
-    url = "https://api.telegram.org/bot" + token + "/sendMessage"
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+
     data = urllib.parse.urlencode({
+
         "chat_id": chat_id,
+
         "text": bericht
+
     }).encode("utf-8")
 
     req = urllib.request.Request(url, data=data, method="POST")
-    with urllib.request.urlopen(req, timeout=20) as response:
-        print("Telegram-status:", response.status)
+
+    with urllib.request.urlopen(req, timeout=20) as r:
+
+        print("Telegram-status:", r.status)
+
+def laad_status():
+
+    try:
+
+        with open(STATE_FILE, "r", encoding="utf-8") as f:
+
+            data = json.load(f)
+
+    except (FileNotFoundError, ValueError):
+
+        data = {}
+
+    if not isinstance(data, dict):
+
+        data = {}
+
+    return {
+
+        "cash": getal(data.get("cash", START_BUDGET)),
+
+        "positions": data.get("positions", {}),
+
+        "alerts": data.get("alerts", {})
+
+    }
+
+def bewaar_status(status):
+
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+
+        json.dump(status, f, indent=2)
 
 def main():
-    tijd = datetime.now(timezone.utc).strftime("%d-%m-%Y %H:%M UTC")
-    aantal, kandidaten = analyseer()
 
-    regels = [
-        "BITVAVO MARKTCONTROLE",
-        "Tijd: " + tijd,
-        "Beschikbare EUR-markten: " + str(aantal),
-        ""
-    ]
+    status = laad_status()
 
-    if kandidaten:
-        regels.append("Technische kandidaten:")
-        for _, naam, koers, verandering, volume in kandidaten:
-            regels.append(
-                f"{naam}: EUR {koers:.8g} | "
-                f"24u {verandering:+.2f}% | "
-                f"volume EUR {volume:,.0f}"
+    positions = status["positions"]
+
+    alerts = status["alerts"]
+
+    markten = ophalen("/markets")
+
+    tickers = ophalen("/ticker/24h")
+
+    eur_markten = {
+
+        m["market"] for m in markten
+
+        if m.get("quote") == "EUR"
+
+        and m.get("status") == "trading"
+
+    }
+
+    kandidaten = []
+
+    koersen = {}
+
+    for t in tickers:
+
+        naam = t.get("market", "")
+
+        if naam not in eur_markten:
+
+            continue
+
+        koers = getal(t.get("last"))
+
+        opening = getal(t.get("open"))
+
+        volume = getal(t.get("volumeQuote"))
+
+        if koers <= 0 or opening <= 0:
+
+            continue
+
+        koersen[naam] = koers
+
+        stijging = (koers / opening - 1) * 100
+
+        if (
+
+            MIN_RISE <= stijging <= MAX_RISE
+
+            and volume >= MIN_VOLUME
+
+        ):
+
+            kandidaten.append((volume, naam, koers, stijging))
+
+    kandidaten.sort(reverse=True)
+
+    berichten = []
+
+    # Controleer eerst bestaande fictieve posities.
+
+    for naam, positie in list(positions.items()):
+
+        if naam not in koersen:
+
+            continue
+
+        koers = koersen[naam]
+
+        aankoop = getal(positie["buy_price"])
+
+        aantal = getal(positie["amount"])
+
+        if aankoop <= 0 or aantal <= 0:
+
+            continue
+
+        rendement = (
+
+            koers * (1 - FEE_RATE) /
+
+            (aankoop * (1 + FEE_RATE)) - 1
+
+        )
+
+        if rendement >= TAKE_PROFIT or rendement <= -STOP_LOSS:
+
+            waarde = aantal * koers * (1 - FEE_RATE)
+
+            status["cash"] += waarde
+
+            winst = waarde - (
+
+                aantal * aankoop * (1 + FEE_RATE)
+
             )
-    else:
-        regels.append("Geen kandidaten binnen de ingestelde filters.")
 
-    regels.extend([
-        "",
-        "Dit is een marktscreening, geen koopadvies.",
-        "Geen automatische transacties."
-    ])
+            reden = (
 
-    bericht = "\n".join(regels)
-    print(bericht)
-    telegram(bericht)
+                "Winstdoel bereikt"
+
+                if rendement >= TAKE_PROFIT
+
+                else "Verliesgrens bereikt"
+
+            )
+
+            berichten.append(
+
+                "MOGELIJK VERKOPEN\n"
+
+                f"Munt: {naam}\n"
+
+                f"Huidige koers: EUR {koers:.8g}\n"
+
+                f"Reden: {reden}\n"
+
+                f"Fictief resultaat: EUR {winst:+.2f}\n"
+
+                "De proefpositie wordt fictief gesloten."
+
+            )
+
+            del positions[naam]
+
+            alerts.pop(naam, None)
+
+    # Zoek nieuwe mogelijke koopkansen.
+
+    for _, naam, koers, stijging in kandidaten:
+
+        if len(positions) >= MAX_POSITIONS:
+
+            break
+
+        if naam in positions or naam in alerts:
+
+            continue
+
+        if status["cash"] < BUY_EUR:
+
+            break
+
+        aantal = BUY_EUR / (koers * (1 + FEE_RATE))
+
+        status["cash"] -= BUY_EUR
+
+        positions[naam] = {
+
+            "buy_price": koers,
+
+            "amount": aantal
+
+        }
+
+        alerts[naam] = True
+
+        berichten.append(
+
+            "MOGELIJK KOPEN\n"
+
+            f"Munt: {naam}\n"
+
+            f"Koers: EUR {koers:.8g}\n"
+
+            f"Stijging afgelopen 24 uur: {stijging:+.2f}%\n"
+
+            f"Fictief aankoopbedrag: EUR {BUY_EUR:.2f}\n"
+
+            "Waarom? De munt stijgt en wordt "
+
+            "voldoende verhandeld.\n"
+
+            "Let op: dit is geen garantie op winst."
+
+        )
+
+    bewaar_status(status)
+
+    print("Controle uitgevoerd:",
+
+          datetime.now(timezone.utc).isoformat())
+
+    print("EUR-markten:", len(eur_markten))
+
+    print("Fictieve vrije euro's:", round(status["cash"], 2))
+
+    print("Open fictieve posities:", len(positions))
+
+    for bericht in berichten:
+
+        telegram(bericht)
+
+    if not berichten:
+
+        print("Geen nieuwe koop- of verkoopmeldingen.")
 
 if __name__ == "__main__":
+
     main()

@@ -1,89 +1,109 @@
+import os
 import json
-
 import urllib.request
-
+import urllib.parse
 from datetime import datetime, timezone
 
-URL = "https://api.bitvavo.com/v2/ticker/price"
+BASE = "https://api.bitvavo.com/v2"
+MIN_VOLUME_EUR = 100000
+MAX_RESULTS = 5
 
-def main():
-
-    request = urllib.request.Request(
-
-        URL,
-
-        headers={"User-Agent": "BitvavoPaperMonitor/1.0"}
-
+def ophalen(endpoint):
+    req = urllib.request.Request(
+        BASE + endpoint,
+        headers={"User-Agent": "BitvavoMonitor/1.0"}
     )
+    with urllib.request.urlopen(req, timeout=25) as response:
+        return json.load(response)
 
-    with urllib.request.urlopen(request, timeout=20) as response:
+def getal(waarde):
+    try:
+        return float(waarde)
+    except (TypeError, ValueError):
+        return 0.0
 
-        markets = json.load(response)
+def analyseer():
+    markten = ophalen("/markets")
+    tickers = ophalen("/ticker/24h")
+    eur_markten = {
+        m["market"] for m in markten
+        if m.get("quote") == "EUR"
+        and m.get("status") == "trading"
+    }
 
-    eur_markets = [
+    resultaten = []
+    for t in tickers:
+        naam = t.get("market", "")
+        if naam not in eur_markten:
+            continue
 
-        item for item in markets
+        koers = getal(t.get("last"))
+        opening = getal(t.get("open"))
+        volume = getal(t.get("volumeQuote"))
 
-        if item["market"].endswith("-EUR")
+        if koers <= 0 or opening <= 0 or volume < MIN_VOLUME_EUR:
+            continue
 
-    ]
+        verandering = (koers / opening - 1) * 100
 
-    print("Controle:", datetime.now(timezone.utc).isoformat())
+        if verandering < 1 or verandering > 12:
+            continue
 
-    print("Aantal EUR-markten:", len(eur_markets))
+        score = verandering
+        resultaten.append((score, naam, koers, verandering, volume))
 
-    for symbol in ("BTC-EUR", "ETH-EUR", "SOL-EUR"):
+    resultaten.sort(reverse=True)
+    return len(eur_markten), resultaten[:MAX_RESULTS]
 
-        match = next(
-
-            (m for m in eur_markets if m["market"] == symbol),
-
-            None
-
-        )
-
-        if match:
-
-            print(symbol, match["price"], "EUR")
-
-if __name__ == "__main__":
-
-    main()
-import os
-
-import urllib.parse
-
-def stuur_telegram():
-
+def telegram(bericht):
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
-
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
 
     if not token or not chat_id:
-
         print("Telegram-instellingen ontbreken")
-
         return
 
-    bericht = "Bitvavo-monitor: controle uitgevoerd."
-
-    gegevens = urllib.parse.urlencode({
-
+    url = "https://api.telegram.org/bot" + token + "/sendMessage"
+    data = urllib.parse.urlencode({
         "chat_id": chat_id,
-
         "text": bericht
-
     }).encode("utf-8")
 
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    req = urllib.request.Request(url, data=data, method="POST")
+    with urllib.request.urlopen(req, timeout=20) as response:
+        print("Telegram-status:", response.status)
 
-    verzoek = urllib.request.Request(
+def main():
+    tijd = datetime.now(timezone.utc).strftime("%d-%m-%Y %H:%M UTC")
+    aantal, kandidaten = analyseer()
 
-        url, data=gegevens, method="POST"
+    regels = [
+        "BITVAVO MARKTCONTROLE",
+        "Tijd: " + tijd,
+        "Beschikbare EUR-markten: " + str(aantal),
+        ""
+    ]
 
-    )
+    if kandidaten:
+        regels.append("Technische kandidaten:")
+        for _, naam, koers, verandering, volume in kandidaten:
+            regels.append(
+                f"{naam}: EUR {koers:.8g} | "
+                f"24u {verandering:+.2f}% | "
+                f"volume EUR {volume:,.0f}"
+            )
+    else:
+        regels.append("Geen kandidaten binnen de ingestelde filters.")
 
-    with urllib.request.urlopen(verzoek, timeout=15) as antwoord:
+    regels.extend([
+        "",
+        "Dit is een marktscreening, geen koopadvies.",
+        "Geen automatische transacties."
+    ])
 
-        print("Telegram:", antwoord.status)
-stuur_telegram()
+    bericht = "\n".join(regels)
+    print(bericht)
+    telegram(bericht)
+
+if __name__ == "__main__":
+    main()

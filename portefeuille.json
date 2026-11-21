@@ -1,5 +1,5 @@
 {
-  "cash": 4405.56294434018,
+  "cash": 4398.246427601395,
   "positions": {
     "SKY-EUR": {
       "buy_price": 0.040593,
@@ -9,14 +9,14 @@
       "buy_price": 0.00030508,
       "amount": 653930.9259302249
     },
-    "INJ-EUR": {
-      "buy_price": 5.7978,
-      "amount": 34.40981870412795
+    "SOL-EUR": {
+      "buy_price": 64.203,
+      "amount": 3.1073508540534402
     }
   },
   "alerts": {
     "SKY-EUR": true,
     "HOT-EUR": true,
-    "INJ-EUR": true
+    "SOL-EUR": true
   }
 }

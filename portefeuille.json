@@ -1,6 +1,17 @@
 {
-  "startkapitaal": 5000,
-  "saldo": 5000,
-  "posities": [],
-  "transacties": []
+  "cash": 4600.0,
+  "positions": {
+    "SKY-EUR": {
+      "buy_price": 0.040593,
+      "amount": 4914.671171945731
+    },
+    "BLUR-EUR": {
+      "buy_price": 0.006469,
+      "amount": 30839.58059712367
+    }
+  },
+  "alerts": {
+    "SKY-EUR": true,
+    "BLUR-EUR": true
+  }
 }

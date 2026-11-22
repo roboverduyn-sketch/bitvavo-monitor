@@ -430,7 +430,7 @@ def main():
 
         else:
 
-            print("Dagrapport overgeslagen:
+            print("Dagrapport overgeslagen: koers ontbreekt.")
 
 if __name__ == "__main__":
 

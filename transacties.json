@@ -1,1 +1,59 @@
-[]
+[
+
+  {
+
+    "datum": "2026-11-21",
+
+    "type": "VERKOOP",
+
+    "munt": "BLUR-EUR",
+
+    "resultaat_eur": -8.81,
+
+    "bron": "Gereconstrueerd uit GitHub-geschiedenis"
+
+  },
+
+  {
+
+    "datum": "2026-11-21",
+
+    "type": "VERKOOP",
+
+    "munt": "YB-EUR",
+
+    "resultaat_eur": 14.37,
+
+    "bron": "Gereconstrueerd uit GitHub-geschiedenis"
+
+  },
+
+  {
+
+    "datum": "2026-11-21",
+
+    "type": "VERKOOP",
+
+    "munt": "INJ-EUR",
+
+    "resultaat_eur": -7.32,
+
+    "bron": "Gereconstrueerd uit GitHub-geschiedenis"
+
+  },
+
+  {
+
+    "datum": "2026-11-22",
+
+    "type": "VERKOOP",
+
+    "munt": "SKY-EUR",
+
+    "resultaat_eur": -6.67,
+
+    "bron": "Gereconstrueerd uit GitHub-geschiedenis"
+
+  }
+
+]

@@ -45,7 +45,8 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          DAGRAPPORT: ${{ (github.event.schedule == '0 19 * * *' && '1') || '0' }}
+          TZ: Europe/Amsterdam
+          DAGRAPPORT: ${{ (github.event.schedule == '0 18 * * *' && '1') || (github.event.schedule == '0 19 * * *' && '1') || '0' }}
       - name: Fictieve portefeuille bewaren
 
         run: |

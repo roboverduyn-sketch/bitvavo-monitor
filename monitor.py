@@ -317,7 +317,27 @@ def main():
         }
 
         alerts[naam] = True
+        bewaar_transactie({
 
+            "datum": datetime.now(timezone.utc).isoformat(),
+
+            "type": "AANKOOP",
+
+            "munt": naam,
+
+            "aantal": aantal,
+
+            "aankoopkoers": koers,
+
+            "bedrag_eur": BUY_EUR,
+
+            "kosten_eur": round(
+
+                BUY_EUR * FEE_RATE / (1 + FEE_RATE), 2
+
+            )
+
+        })
         berichten.append(
 
             "MOGELIJK KOPEN\n"

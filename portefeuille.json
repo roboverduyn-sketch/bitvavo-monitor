@@ -1,10 +1,6 @@
 {
-  "cash": 4398.246427601395,
+  "cash": 4391.571960122911,
   "positions": {
-    "SKY-EUR": {
-      "buy_price": 0.040593,
-      "amount": 4914.671171945731
-    },
     "HOT-EUR": {
       "buy_price": 0.00030508,
       "amount": 653930.9259302249
@@ -12,11 +8,15 @@
     "SOL-EUR": {
       "buy_price": 64.203,
       "amount": 3.1073508540534402
+    },
+    "HYPE-EUR": {
+      "buy_price": 57.16,
+      "amount": 3.490224753022971
     }
   },
   "alerts": {
-    "SKY-EUR": true,
     "HOT-EUR": true,
-    "SOL-EUR": true
+    "SOL-EUR": true,
+    "HYPE-EUR": true
   }
 }

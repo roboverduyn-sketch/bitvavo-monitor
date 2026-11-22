@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 BASE = "https://api.bitvavo.com/v2"
 
 STATE_FILE = "portefeuille.json"
-
+TRANSACTIEBESTAND = "transacties.json"
 START_BUDGET = 5000.0
 
 BUY_EUR = 200.0

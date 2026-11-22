@@ -245,7 +245,29 @@ def main():
                 else "Verliesgrens bereikt"
 
             )
+           bewaar_transactie({
 
+                "datum": datetime.now(timezone.utc).isoformat(),
+
+                "type": "VERKOOP",
+
+                "munt": naam,
+
+                "aantal": aantal,
+
+                "aankoopkoers": aankoop,
+
+                "verkoopkoers": koers,
+
+                "opbrengst_eur": round(waarde, 2),
+
+                "kosten_eur": round(aantal * koers * FEE_RATE, 2),
+
+                "resultaat_eur": round(winst, 2),
+
+                "reden": reden
+
+            })
             berichten.append(
 
                 "MOGELIJK VERKOPEN\n"

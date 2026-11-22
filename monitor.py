@@ -14,6 +14,7 @@ BASE = "https://api.bitvavo.com/v2"
 
 STATE_FILE = "portefeuille.json"
 TRANSACTIEBESTAND = "transacties.json"
+VOLUME_FILE = "volumes.json"
 START_BUDGET = 5000.0
 
 BUY_EUR = 200.0
@@ -137,6 +138,33 @@ def bewaar_transactie(transactie):
     with open(TRANSACTIEBESTAND, "w", encoding="utf-8") as f:
 
         json.dump(transacties, f, indent=2)
+        
+
+def laad_volumes():
+
+    try:
+
+        with open(VOLUME_FILE, "r", encoding="utf-8") as f:
+
+            gegevens = json.load(f)
+
+        if isinstance(gegevens, dict):
+
+            return gegevens
+
+    except (FileNotFoundError, ValueError):
+
+        pass
+
+    return {}
+
+
+def bewaar_volumes(gegevens):
+
+    with open(VOLUME_FILE, "w", encoding="utf-8") as f:
+
+        json.dump(gegevens, f, indent=2)
+
 def maak_dagrapport(status, koersen):
 
     cash = getal(status["cash"])
@@ -191,7 +219,7 @@ def main():
 
     tickers = ophalen("/ticker/24h")
     orderboeken = ophalen("/ticker/book")
-
+    vorige_volumes = laad_volumes()
     eur_markten = {
 
         m["market"] for m in markten
@@ -217,8 +245,8 @@ def main():
 
             spreads[naam] = (laat - bied) / laat * 100
     kandidaten = []
-
     koersen = {}
+    huidige_volumes = {}
 
     for t in tickers:
 
@@ -233,7 +261,7 @@ def main():
         opening = getal(t.get("open"))
 
         volume = getal(t.get("volumeQuote"))
-
+        huidige_volumes[naam] = volume
         if koers <= 0 or opening <= 0:
 
             continue
@@ -421,7 +449,7 @@ def main():
         )
 
     bewaar_status(status)
-
+    bewaar_volumes(huidige_volumes)
     print("Controle uitgevoerd:",
 
           datetime.now(timezone.utc).isoformat())

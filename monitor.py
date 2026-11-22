@@ -134,7 +134,7 @@ def bewaar_transactie(transactie):
         transacties = []
 
     transacties.append(transactie)
-
+    print("Transactie geregistreerd:", transactie.get("type"), transactie.get("munt"))
     with open(TRANSACTIEBESTAND, "w", encoding="utf-8") as f:
 
         json.dump(transacties, f, indent=2)

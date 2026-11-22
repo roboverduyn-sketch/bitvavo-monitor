@@ -136,6 +136,48 @@ def bewaar_transactie(transactie):
     with open(TRANSACTIEBESTAND, "w", encoding="utf-8") as f:
 
         json.dump(transacties, f, indent=2)
+def maak_dagrapport(status, koersen):
+
+    cash = getal(status["cash"])
+
+    posities = status["positions"]
+
+    waarde_posities = 0.0
+
+    for naam, positie in posities.items():
+
+        koers = koersen.get(naam)
+
+        if koers is None:
+
+            return None
+
+        aantal = getal(positie["amount"])
+
+        waarde_posities += aantal * koers * (1 - FEE_RATE)
+
+    totaal = cash + waarde_posities
+
+    resultaat = totaal - START_BUDGET
+
+    return (
+
+        "BITVAVO FICTIEF DAGrapport\n\n"
+
+        f"Startkapitaal: EUR {START_BUDGET:.2f}\n"
+
+        f"Vrij geld: EUR {cash:.2f}\n"
+
+        f"Waarde open posities: EUR {waarde_posities:.2f}\n"
+
+        f"Totale portefeuille: EUR {totaal:.2f}\n"
+
+        f"Totaal resultaat: EUR {resultaat:+.2f}\n"
+
+        f"Open posities: {len(posities)}\n\n"
+
+        "Alle bedragen zijn fictief."
+
 def main():
 
     status = laad_status()
@@ -375,7 +417,17 @@ def main():
         telegram(bericht)
 
     if not berichten:
+    if os.environ.get("DAGRAPPORT") == "1":
 
+        rapport = maak_dagrapport(status, koersen)
+
+        if rapport is not None:
+
+            telegram(rapport)
+
+        else:
+
+            print("Dagrapport overgeslagen: koers ontbreekt.")
         print("Geen nieuwe koop- of verkoopmeldingen.")
 
 if __name__ == "__main__":

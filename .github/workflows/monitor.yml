@@ -55,11 +55,11 @@ jobs:
 
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add portefeuille.json transacties.json
+          git add portefeuille.json transacties.json volumes.json
 
           if ! git diff --cached --quiet; then
 
-            git commit -m "Fictieve portefeuille bijgewerkt"
+           git commit -m "Fictieve portefeuille bijgewerkt"
 
             git push
 

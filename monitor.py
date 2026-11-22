@@ -166,7 +166,7 @@ def bewaar_volumes(gegevens):
         json.dump(gegevens, f, indent=2)
 
 def maak_dagrapport(status, koersen):
-
+    gerealiseerd = getal(status["cash"]) + len(status["positions"]) * BUY_EUR - START_BUDGET
     cash = getal(status["cash"])
 
     posities = status["positions"]

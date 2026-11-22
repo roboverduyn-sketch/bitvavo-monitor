@@ -262,6 +262,14 @@ def main():
 
         volume = getal(t.get("volumeQuote"))
         huidige_volumes[naam] = volume
+        vorig_volume = getal(vorige_volumes.get(naam))
+
+        volume_verandering = ((volume / vorig_volume) - 1) * 100 if vorig_volume > 0 else None
+        if naam == "BTC-EUR" and volume_verandering is not None:
+
+            print(f"BTC 24-uursvolume: EUR {volume:.2f}")
+
+            print(f"Verandering sinds vorige meting: {volume_verandering:+.2f}%")
         if koers <= 0 or opening <= 0:
 
             continue

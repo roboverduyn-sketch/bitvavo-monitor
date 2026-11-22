@@ -1,0 +1,35 @@
+name: Crypto nieuwscontrole
+
+on:
+
+  workflow_dispatch:
+
+permissions:
+
+  contents: read
+
+jobs:
+
+  nieuwscontrole:
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 5
+
+    steps:
+
+      - name: Bestanden ophalen
+
+        uses: actions/checkout@v5
+
+      - name: Python installeren
+
+        uses: actions/setup-python@v6
+
+        with:
+
+          python-version: "3.12"
+
+      - name: Cryptonieuws controleren
+
+        run: python crypto_nieuws.py

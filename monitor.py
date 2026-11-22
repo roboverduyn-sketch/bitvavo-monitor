@@ -202,7 +202,9 @@ def maak_dagrapport(status, koersen):
         f"Totale portefeuille: EUR {totaal:.2f}\n"
 
         f"Totaal resultaat: EUR {resultaat:+.2f}\n"
+        f"Gerealiseerd resultaat: EUR {gerealiseerd:+.2f}\n"
 
+        f"Ongerealiseerd resultaat: EUR {resultaat - gerealiseerd:+.2f}\n"
         f"Open posities: {len(posities)}\n\n"
 
         "Alle bedragen zijn fictief."

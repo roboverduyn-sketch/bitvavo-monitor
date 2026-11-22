@@ -178,4 +178,6 @@ def controleer_nieuws():
 
 if __name__ == "__main__":
 
+    stuur_telegram("✅ TEST: De cryptonieuwsmonitor is verbonden met Telegram!")
+
     controleer_nieuws()

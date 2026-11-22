@@ -4,6 +4,38 @@
 
     "datum": "2026-11-21",
 
+    "type": "AANKOOP",
+
+    "munt": "SKY-EUR",
+
+    "aankoopkoers": 0.040593,
+
+    "bedrag_eur": 200,
+
+    "gereconstrueerd": true
+
+  },
+
+  {
+
+    "datum": "2026-11-21",
+
+    "type": "AANKOOP",
+
+    "munt": "BLUR-EUR",
+
+    "aankoopkoers": 0.006469,
+
+    "bedrag_eur": 200,
+
+    "gereconstrueerd": true
+
+  },
+
+  {
+
+    "datum": "2026-11-21",
+
     "type": "VERKOOP",
 
     "munt": "BLUR-EUR",
@@ -11,6 +43,38 @@
     "resultaat_eur": -8.81,
 
     "bron": "Gereconstrueerd uit GitHub-geschiedenis"
+
+  },
+
+  {
+
+    "datum": "2026-11-21",
+
+    "type": "AANKOOP",
+
+    "munt": "HOT-EUR",
+
+    "aankoopkoers": 0.00030508,
+
+    "bedrag_eur": 200,
+
+    "gereconstrueerd": true
+
+  },
+
+  {
+
+    "datum": "2026-11-21",
+
+    "type": "AANKOOP",
+
+    "munt": "YB-EUR",
+
+    "aankoopkoers": 0.04803,
+
+    "bedrag_eur": 200,
+
+    "gereconstrueerd": true
 
   },
 
@@ -32,6 +96,22 @@
 
     "datum": "2026-11-21",
 
+    "type": "AANKOOP",
+
+    "munt": "INJ-EUR",
+
+    "bedrag_eur": 200,
+
+    "gereconstrueerd": true,
+
+    "opmerking": "Exacte aankoopkoers nog onbekend"
+
+  },
+
+  {
+
+    "datum": "2026-11-21",
+
     "type": "VERKOOP",
 
     "munt": "INJ-EUR",
@@ -39,6 +119,22 @@
     "resultaat_eur": -7.32,
 
     "bron": "Gereconstrueerd uit GitHub-geschiedenis"
+
+  },
+
+  {
+
+    "datum": "2026-11-21",
+
+    "type": "AANKOOP",
+
+    "munt": "SOL-EUR",
+
+    "aankoopkoers": 64.203,
+
+    "bedrag_eur": 200,
+
+    "gereconstrueerd": true
 
   },
 
@@ -53,6 +149,22 @@
     "resultaat_eur": -6.67,
 
     "bron": "Gereconstrueerd uit GitHub-geschiedenis"
+
+  },
+
+  {
+
+    "datum": "2026-11-22",
+
+    "type": "AANKOOP",
+
+    "munt": "HYPE-EUR",
+
+    "aankoopkoers": 57.16,
+
+    "bedrag_eur": 200,
+
+    "gereconstrueerd": true
 
   }
 

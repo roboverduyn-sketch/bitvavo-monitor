@@ -1,12 +1,12 @@
 name: Crypto nieuwscontrole
 
 on:
+
   workflow_dispatch:
 
   schedule:
 
     - cron: "*/30 * * * *"
-  workflow_dispatch:
 
 permissions:
 
@@ -34,7 +34,7 @@ jobs:
 
           python-version: "3.12"
 
-       - name: Cryptonieuws controleren
+      - name: Cryptonieuws controleren
 
         env:
 
@@ -43,7 +43,10 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
         run: python crypto_nieuws.py
+
       - name: Verzonden nieuws bewaren
+
+        if: always()
 
         run: |
 

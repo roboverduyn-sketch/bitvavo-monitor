@@ -87,13 +87,39 @@ def stuur_telegram(bericht):
         print("Telegram-status:", antwoord.status)
 BELANGRIJKE_WOORDEN = [
 
-    "bitcoin", "ethereum", "solana",
+    "etf approval",
 
-    "etf", "sec", "regulation",
+    "etf rejection",
 
-    "approval", "listing", "bitvavo",
+    "sec approves",
 
-    "hack", "exploit", "partnership"
+    "sec rejects",
+
+    "regulatory approval",
+
+    "new listing",
+
+    "token listing",
+
+    "delisting",
+
+    "bitvavo",
+
+    "major upgrade",
+
+    "network outage",
+
+    "security breach",
+
+    "exchange hacked",
+
+    "exploit",
+
+    "bankruptcy",
+
+    "trading suspended",
+
+    "token unlock"
 
 ]
 

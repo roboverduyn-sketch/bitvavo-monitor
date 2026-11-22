@@ -33,9 +33,7 @@ jobs:
         with:
 
           python-version: "3.12"
-      - name: Bitvavo verbinding testen
-
-        run: python bitvavo_nieuws.py
+      
       - name: Cryptonieuws controleren
 
         env:

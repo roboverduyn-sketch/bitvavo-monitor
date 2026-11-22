@@ -115,7 +115,27 @@ def bewaar_status(status):
     with open(STATE_FILE, "w", encoding="utf-8") as f:
 
         json.dump(status, f, indent=2)
+def bewaar_transactie(transactie):
 
+    try:
+
+        with open(TRANSACTIEBESTAND, "r", encoding="utf-8") as f:
+
+            transacties = json.load(f)
+
+    except (FileNotFoundError, ValueError):
+
+        transacties = []
+
+    if not isinstance(transacties, list):
+
+        transacties = []
+
+    transacties.append(transactie)
+
+    with open(TRANSACTIEBESTAND, "w", encoding="utf-8") as f:
+
+        json.dump(transacties, f, indent=2)
 def main():
 
     status = laad_status()

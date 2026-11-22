@@ -245,7 +245,7 @@ def main():
                 else "Verliesgrens bereikt"
 
             )
-           bewaar_transactie({
+            bewaar_transactie({
 
                 "datum": datetime.now(timezone.utc).isoformat(),
 

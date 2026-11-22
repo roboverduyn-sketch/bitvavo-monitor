@@ -21,6 +21,7 @@ BUY_EUR = 200.0
 MAX_POSITIONS = 3
 
 MIN_VOLUME = 250000.0
+MAX_SPREAD = 1.0
 
 MIN_RISE = 2.0
 
@@ -189,6 +190,7 @@ def main():
     markten = ophalen("/markets")
 
     tickers = ophalen("/ticker/24h")
+    orderboeken = ophalen("/ticker/book")
 
     eur_markten = {
 
@@ -199,7 +201,21 @@ def main():
         and m.get("status") == "trading"
 
     }
+   
 
+    spreads = {}
+
+    for boek in orderboeken:
+
+        naam = boek.get("market", "")
+
+        bied = getal(boek.get("bid"))
+
+        laat = getal(boek.get("ask"))
+
+        if bied > 0 and laat > 0 and laat >= bied:
+
+            spreads[naam] = (laat - bied) / laat * 100
     kandidaten = []
 
     koersen = {}
@@ -226,6 +242,10 @@ def main():
 
         stijging = (koers / opening - 1) * 100
 
+
+        if naam not in spreads or spreads[naam] > MAX_SPREAD:
+            continue
+            
         if (
 
             MIN_RISE <= stijging <= MAX_RISE

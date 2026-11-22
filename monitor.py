@@ -420,7 +420,7 @@ def main():
 
         print("Geen nieuwe koop- of verkoopmeldingen.")
 
-    if os.environ.get("DAGRAPPORT") == "1":
+        if os.environ.get("DAGRAPPORT") == "1" and datetime.now().hour == 20:
 
         rapport = maak_dagrapport(status, koersen)
 

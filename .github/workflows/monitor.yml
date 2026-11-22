@@ -59,7 +59,7 @@ jobs:
 
           if ! git diff --cached --quiet; then
 
-           git commit -m "Fictieve portefeuille bijgewerkt"
+            git commit -m "Fictieve portefeuille bijgewerkt"
 
             git push
 

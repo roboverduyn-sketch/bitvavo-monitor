@@ -30,6 +30,12 @@ jobs:
 
           python-version: "3.12"
 
-      - name: Cryptonieuws controleren
+       - name: Cryptonieuws controleren
+
+        env:
+
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
         run: python crypto_nieuws.py

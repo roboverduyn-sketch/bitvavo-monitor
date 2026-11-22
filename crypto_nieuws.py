@@ -60,7 +60,7 @@ def stuur_telegram(bericht):
 
         print("Telegram-instellingen ontbreken")
 
-        return
+        raise RuntimeError("Telegram-instellingen ontbreken")
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
 
@@ -85,7 +85,7 @@ def stuur_telegram(bericht):
     with urllib.request.urlopen(verzoek, timeout=20) as antwoord:
 
         print("Telegram-status:", antwoord.status)
-        BELANGRIJKE_WOORDEN = [
+BELANGRIJKE_WOORDEN = [
 
     "bitcoin", "ethereum", "solana",
 
@@ -118,7 +118,23 @@ def controleer_nieuws():
 
             berichten = nieuws.findall(".//item")
             verzonden = laad_verzonden_nieuws()
+            if not os.path.exists(VERZONDEN_BESTAND):
 
+                bestaande_links = [
+
+                    item.findtext("link", "").strip()
+
+                    for item in berichten
+
+                    if item.findtext("link", "").strip()
+
+                ]
+
+                bewaar_verzonden_nieuws(bestaande_links)
+
+                print("Eerste controle: bestaande berichten overgeslagen")
+
+                continue
             for item in berichten:
 
                 titel = item.findtext("title", "").strip()

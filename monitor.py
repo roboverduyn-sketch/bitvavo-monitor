@@ -265,7 +265,7 @@ def main():
         vorig_volume = getal(vorige_volumes.get(naam))
 
         volume_verandering = ((volume / vorig_volume) - 1) * 100 if vorig_volume > 0 else None
-        if naam == "BTC-EUR" and volume_verandering is not None:
+        if naam == "BTC-EUR":
 
             print(f"BTC 24-uursvolume: EUR {volume:.2f}")
 

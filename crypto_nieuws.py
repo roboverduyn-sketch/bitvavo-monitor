@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 
 NIEUWSBRONNEN = {
 
-    "Bitvavo": "https://blog.bitvavo.com/feed/"
+    "CoinDesk": "https://www.coindesk.com/arc/outboundfeeds/rss/"
 
 }
 

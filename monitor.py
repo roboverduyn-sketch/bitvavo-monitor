@@ -177,7 +177,7 @@ def maak_dagrapport(status, koersen):
         f"Open posities: {len(posities)}\n\n"
 
         "Alle bedragen zijn fictief."
-
+    )
 def main():
 
     status = laad_status()
@@ -417,6 +417,9 @@ def main():
         telegram(bericht)
 
     if not berichten:
+
+        print("Geen nieuwe koop- of verkoopmeldingen.")
+
     if os.environ.get("DAGRAPPORT") == "1":
 
         rapport = maak_dagrapport(status, koersen)
@@ -427,8 +430,7 @@ def main():
 
         else:
 
-            print("Dagrapport overgeslagen: koers ontbreekt.")
-        print("Geen nieuwe koop- of verkoopmeldingen.")
+            print("Dagrapport overgeslagen:
 
 if __name__ == "__main__":
 

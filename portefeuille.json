@@ -1,22 +1,22 @@
 {
-  "cash": 4385.121258504072,
+  "cash": 4416.683568095089,
   "positions": {
-    "SOL-EUR": {
-      "buy_price": 64.203,
-      "amount": 3.1073508540534402
-    },
-    "HYPE-EUR": {
-      "buy_price": 57.16,
-      "amount": 3.490224753022971
-    },
     "BTC-EUR": {
       "buy_price": 55273.0,
       "amount": 0.00360937974929519
+    },
+    "ETH-EUR": {
+      "buy_price": 1632.5,
+      "amount": 0.12220597052544749
+    },
+    "NEAR-EUR": {
+      "buy_price": 2.8881,
+      "amount": 69.07698725210103
     }
   },
   "alerts": {
-    "SOL-EUR": true,
-    "HYPE-EUR": true,
-    "BTC-EUR": true
+    "BTC-EUR": true,
+    "ETH-EUR": true,
+    "NEAR-EUR": true
   }
 }

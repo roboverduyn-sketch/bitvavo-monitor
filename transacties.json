@@ -103,5 +103,47 @@
     "aankoopkoers": 55273.0,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-23T15:14:57.141128+00:00",
+    "type": "VERKOOP",
+    "munt": "SOL-EUR",
+    "aantal": 3.1073508540534402,
+    "aankoopkoers": 64.203,
+    "verkoopkoers": 69.538,
+    "opbrengst_eur": 215.54,
+    "kosten_eur": 0.54,
+    "resultaat_eur": 15.54,
+    "reden": "Winstdoel bereikt"
+  },
+  {
+    "datum": "2026-11-23T15:14:57.141530+00:00",
+    "type": "VERKOOP",
+    "munt": "HYPE-EUR",
+    "aantal": 3.490224753022971,
+    "aankoopkoers": 57.16,
+    "verkoopkoers": 62.049,
+    "opbrengst_eur": 216.02,
+    "kosten_eur": 0.54,
+    "resultaat_eur": 16.02,
+    "reden": "Winstdoel bereikt"
+  },
+  {
+    "datum": "2026-11-23T15:14:57.142093+00:00",
+    "type": "AANKOOP",
+    "munt": "ETH-EUR",
+    "aantal": 0.12220597052544749,
+    "aankoopkoers": 1632.5,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-23T15:14:57.142535+00:00",
+    "type": "AANKOOP",
+    "munt": "NEAR-EUR",
+    "aantal": 69.07698725210103,
+    "aankoopkoers": 2.8881,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

@@ -1,22 +1,22 @@
 {
-  "cash": 4410.187499136914,
+  "cash": 4403.063276004088,
   "positions": {
     "BTC-EUR": {
       "buy_price": 55273.0,
       "amount": 0.00360937974929519
     },
-    "ETH-EUR": {
-      "buy_price": 1632.5,
-      "amount": 0.12220597052544749
-    },
     "XRP-EUR": {
       "buy_price": 0.87762,
       "amount": 227.3207616995887
+    },
+    "SOL-EUR": {
+      "buy_price": 66.803,
+      "amount": 2.9864114917412845
     }
   },
   "alerts": {
     "BTC-EUR": true,
-    "ETH-EUR": true,
-    "XRP-EUR": true
+    "XRP-EUR": true,
+    "SOL-EUR": true
   }
 }

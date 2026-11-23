@@ -145,5 +145,26 @@
     "aankoopkoers": 2.8881,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-23T18:08:33.979702+00:00",
+    "type": "VERKOOP",
+    "munt": "NEAR-EUR",
+    "aantal": 69.07698725210103,
+    "aankoopkoers": 2.8881,
+    "verkoopkoers": 2.8083,
+    "opbrengst_eur": 193.5,
+    "kosten_eur": 0.48,
+    "resultaat_eur": -6.5,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-23T18:08:33.980060+00:00",
+    "type": "AANKOOP",
+    "munt": "XRP-EUR",
+    "aantal": 227.3207616995887,
+    "aankoopkoers": 0.87762,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

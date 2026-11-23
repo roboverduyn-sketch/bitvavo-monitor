@@ -1,10 +1,6 @@
 {
-  "cash": 4391.571960122911,
+  "cash": 4385.121258504072,
   "positions": {
-    "HOT-EUR": {
-      "buy_price": 0.00030508,
-      "amount": 653930.9259302249
-    },
     "SOL-EUR": {
       "buy_price": 64.203,
       "amount": 3.1073508540534402
@@ -12,11 +8,15 @@
     "HYPE-EUR": {
       "buy_price": 57.16,
       "amount": 3.490224753022971
+    },
+    "BTC-EUR": {
+      "buy_price": 55273.0,
+      "amount": 0.00360937974929519
     }
   },
   "alerts": {
-    "HOT-EUR": true,
     "SOL-EUR": true,
-    "HYPE-EUR": true
+    "HYPE-EUR": true,
+    "BTC-EUR": true
   }
 }

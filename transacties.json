@@ -1,171 +1,107 @@
 [
-
   {
-
     "datum": "2026-11-21",
-
     "type": "AANKOOP",
-
     "munt": "SKY-EUR",
-
     "aankoopkoers": 0.040593,
-
     "bedrag_eur": 200,
-
     "gereconstrueerd": true
-
   },
-
   {
-
     "datum": "2026-11-21",
-
     "type": "AANKOOP",
-
     "munt": "BLUR-EUR",
-
     "aankoopkoers": 0.006469,
-
     "bedrag_eur": 200,
-
     "gereconstrueerd": true
-
   },
-
   {
-
     "datum": "2026-11-21",
-
     "type": "VERKOOP",
-
     "munt": "BLUR-EUR",
-
     "resultaat_eur": -8.81,
-
     "bron": "Gereconstrueerd uit GitHub-geschiedenis"
-
   },
-
   {
-
     "datum": "2026-11-21",
-
     "type": "AANKOOP",
-
     "munt": "HOT-EUR",
-
     "aankoopkoers": 0.00030508,
-
     "bedrag_eur": 200,
-
     "gereconstrueerd": true
-
   },
-
   {
-
     "datum": "2026-11-21",
-
     "type": "AANKOOP",
-
     "munt": "YB-EUR",
-
     "aankoopkoers": 0.04803,
-
     "bedrag_eur": 200,
-
     "gereconstrueerd": true
-
   },
-
   {
-
     "datum": "2026-11-21",
-
     "type": "VERKOOP",
-
     "munt": "YB-EUR",
-
     "resultaat_eur": 14.37,
-
     "bron": "Gereconstrueerd uit GitHub-geschiedenis"
-
   },
-
   {
-
     "datum": "2026-11-21",
-
     "type": "AANKOOP",
-
     "munt": "INJ-EUR",
-
     "bedrag_eur": 200,
-
     "gereconstrueerd": true,
-
     "opmerking": "Exacte aankoopkoers nog onbekend"
-
   },
-
   {
-
     "datum": "2026-11-21",
-
     "type": "VERKOOP",
-
     "munt": "INJ-EUR",
-
     "resultaat_eur": -7.32,
-
     "bron": "Gereconstrueerd uit GitHub-geschiedenis"
-
   },
-
   {
-
     "datum": "2026-11-21",
-
     "type": "AANKOOP",
-
     "munt": "SOL-EUR",
-
     "aankoopkoers": 64.203,
-
     "bedrag_eur": 200,
-
     "gereconstrueerd": true
-
   },
-
   {
-
     "datum": "2026-11-22",
-
     "type": "VERKOOP",
-
     "munt": "SKY-EUR",
-
     "resultaat_eur": -6.67,
-
     "bron": "Gereconstrueerd uit GitHub-geschiedenis"
-
   },
-
   {
-
     "datum": "2026-11-22",
-
     "type": "AANKOOP",
-
     "munt": "HYPE-EUR",
-
     "aankoopkoers": 57.16,
-
     "bedrag_eur": 200,
-
     "gereconstrueerd": true
-
+  },
+  {
+    "datum": "2026-11-23T03:04:27.331256+00:00",
+    "type": "VERKOOP",
+    "munt": "HOT-EUR",
+    "aantal": 653930.9259302249,
+    "aankoopkoers": 0.00030508,
+    "verkoopkoers": 0.00029672,
+    "opbrengst_eur": 193.55,
+    "kosten_eur": 0.49,
+    "resultaat_eur": -6.45,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-23T03:04:27.331668+00:00",
+    "type": "AANKOOP",
+    "munt": "BTC-EUR",
+    "aantal": 0.00360937974929519,
+    "aankoopkoers": 55273.0,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
-
 ]

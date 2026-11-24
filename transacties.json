@@ -187,5 +187,26 @@
     "aankoopkoers": 66.803,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-24T03:00:04.034958+00:00",
+    "type": "VERKOOP",
+    "munt": "SOL-EUR",
+    "aantal": 2.9864114917412845,
+    "aankoopkoers": 66.803,
+    "verkoopkoers": 64.996,
+    "opbrengst_eur": 193.62,
+    "kosten_eur": 0.49,
+    "resultaat_eur": -6.38,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-24T03:00:04.035375+00:00",
+    "type": "AANKOOP",
+    "munt": "HYPE-EUR",
+    "aantal": 3.465368193204673,
+    "aankoopkoers": 57.57,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

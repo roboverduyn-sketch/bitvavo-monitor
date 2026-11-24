@@ -1,22 +1,22 @@
 {
-  "cash": 4396.682815318011,
+  "cash": 4390.42011696715,
   "positions": {
     "BTC-EUR": {
       "buy_price": 55273.0,
       "amount": 0.00360937974929519
     },
-    "XRP-EUR": {
-      "buy_price": 0.87762,
-      "amount": 227.3207616995887
-    },
     "HYPE-EUR": {
       "buy_price": 57.57,
       "amount": 3.465368193204673
+    },
+    "LSK-EUR": {
+      "buy_price": 0.139,
+      "amount": 1435.2607689409567
     }
   },
   "alerts": {
     "BTC-EUR": true,
-    "XRP-EUR": true,
-    "HYPE-EUR": true
+    "HYPE-EUR": true,
+    "LSK-EUR": true
   }
 }

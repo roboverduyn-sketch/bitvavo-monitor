@@ -250,5 +250,26 @@
     "aankoopkoers": 0.003499,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-24T16:22:51.162953+00:00",
+    "type": "VERKOOP",
+    "munt": "LSK-EUR",
+    "aantal": 1435.2607689409567,
+    "aankoopkoers": 0.139,
+    "verkoopkoers": 0.13435,
+    "opbrengst_eur": 192.35,
+    "kosten_eur": 0.48,
+    "resultaat_eur": -7.65,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-24T16:22:51.163523+00:00",
+    "type": "AANKOOP",
+    "munt": "BABY-EUR",
+    "aantal": 26455.542618060343,
+    "aankoopkoers": 0.007541,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

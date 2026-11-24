@@ -1,22 +1,22 @@
 {
-  "cash": 4384.400018697971,
+  "cash": 4376.745234794421,
   "positions": {
     "BTC-EUR": {
       "buy_price": 55273.0,
       "amount": 0.00360937974929519
     },
-    "LSK-EUR": {
-      "buy_price": 0.139,
-      "amount": 1435.2607689409567
-    },
     "INX-EUR": {
       "buy_price": 0.003499,
       "amount": 57016.64672271879
+    },
+    "BABY-EUR": {
+      "buy_price": 0.007541,
+      "amount": 26455.542618060343
     }
   },
   "alerts": {
     "BTC-EUR": true,
-    "LSK-EUR": true,
-    "INX-EUR": true
+    "INX-EUR": true,
+    "BABY-EUR": true
   }
 }

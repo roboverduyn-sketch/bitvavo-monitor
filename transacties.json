@@ -418,5 +418,26 @@
     "aankoopkoers": 0.035906,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-25T17:12:33.426696+00:00",
+    "type": "VERKOOP",
+    "munt": "LISTA-EUR",
+    "aantal": 2073.860650770214,
+    "aankoopkoers": 0.096198,
+    "verkoopkoers": 0.11135,
+    "opbrengst_eur": 230.35,
+    "kosten_eur": 0.58,
+    "resultaat_eur": 30.35,
+    "reden": "Winstdoel bereikt"
+  },
+  {
+    "datum": "2026-11-25T17:12:33.427586+00:00",
+    "type": "AANKOOP",
+    "munt": "DRV-EUR",
+    "aantal": 657.6386039121605,
+    "aankoopkoers": 0.30336,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

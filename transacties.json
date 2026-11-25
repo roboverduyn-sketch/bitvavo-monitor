@@ -397,5 +397,26 @@
     "aankoopkoers": 0.096198,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-25T13:32:19.003067+00:00",
+    "type": "VERKOOP",
+    "munt": "DRV-EUR",
+    "aantal": 643.5524092993323,
+    "aankoopkoers": 0.31,
+    "verkoopkoers": 0.30162,
+    "opbrengst_eur": 193.62,
+    "kosten_eur": 0.49,
+    "resultaat_eur": -6.38,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-25T13:32:19.003572+00:00",
+    "type": "AANKOOP",
+    "munt": "SKY-EUR",
+    "aantal": 5556.209181830141,
+    "aankoopkoers": 0.035906,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

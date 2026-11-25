@@ -334,5 +334,47 @@
     "aankoopkoers": 0.004092,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-25T11:06:33.906639+00:00",
+    "type": "VERKOOP",
+    "munt": "BTC-EUR",
+    "aantal": 0.00360937974929519,
+    "aankoopkoers": 55273.0,
+    "verkoopkoers": 53741.0,
+    "opbrengst_eur": 193.49,
+    "kosten_eur": 0.48,
+    "resultaat_eur": -6.51,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-25T11:06:33.907313+00:00",
+    "type": "VERKOOP",
+    "munt": "ZEUS-EUR",
+    "aantal": 48753.97040146457,
+    "aankoopkoers": 0.004092,
+    "verkoopkoers": 0.0039613,
+    "opbrengst_eur": 192.65,
+    "kosten_eur": 0.48,
+    "resultaat_eur": -7.35,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-25T11:06:33.908018+00:00",
+    "type": "AANKOOP",
+    "munt": "DRV-EUR",
+    "aantal": 643.5524092993323,
+    "aankoopkoers": 0.31,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-25T11:06:33.908701+00:00",
+    "type": "AANKOOP",
+    "munt": "WLFI-EUR",
+    "aantal": 5262.496620490452,
+    "aankoopkoers": 0.03791,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

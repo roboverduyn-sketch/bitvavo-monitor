@@ -1,22 +1,22 @@
 {
-  "cash": 4367.930130039485,
+  "cash": 4354.0631581475345,
   "positions": {
-    "BTC-EUR": {
-      "buy_price": 55273.0,
-      "amount": 0.00360937974929519
-    },
     "SKY-EUR": {
       "buy_price": 0.037303,
       "amount": 5348.128753258264
     },
-    "ZEUS-EUR": {
-      "buy_price": 0.004092,
-      "amount": 48753.97040146457
+    "DRV-EUR": {
+      "buy_price": 0.31,
+      "amount": 643.5524092993323
+    },
+    "WLFI-EUR": {
+      "buy_price": 0.03791,
+      "amount": 5262.496620490452
     }
   },
   "alerts": {
-    "BTC-EUR": true,
     "SKY-EUR": true,
-    "ZEUS-EUR": true
+    "DRV-EUR": true,
+    "WLFI-EUR": true
   }
 }

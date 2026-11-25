@@ -439,5 +439,26 @@
     "aankoopkoers": 0.30336,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-25T19:43:37.746245+00:00",
+    "type": "VERKOOP",
+    "munt": "DRV-EUR",
+    "aantal": 657.6386039121605,
+    "aankoopkoers": 0.30336,
+    "verkoopkoers": 0.32445,
+    "opbrengst_eur": 212.84,
+    "kosten_eur": 0.53,
+    "resultaat_eur": 12.84,
+    "reden": "Winstdoel bereikt"
+  },
+  {
+    "datum": "2026-11-25T19:43:37.746760+00:00",
+    "type": "AANKOOP",
+    "munt": "XRP-EUR",
+    "aantal": 232.77667216941023,
+    "aankoopkoers": 0.85705,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

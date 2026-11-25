@@ -1,22 +1,22 @@
 {
-  "cash": 4369.036584157509,
+  "cash": 4382.579639395691,
   "positions": {
     "BTC-EUR": {
       "buy_price": 55273.0,
       "amount": 0.00360937974929519
     },
-    "BABY-EUR": {
-      "buy_price": 0.007541,
-      "amount": 26455.542618060343
-    },
     "SKY-EUR": {
       "buy_price": 0.037303,
       "amount": 5348.128753258264
+    },
+    "LISTA-EUR": {
+      "buy_price": 0.094239,
+      "amount": 2116.971178416505
     }
   },
   "alerts": {
     "BTC-EUR": true,
-    "BABY-EUR": true,
-    "SKY-EUR": true
+    "SKY-EUR": true,
+    "LISTA-EUR": true
   }
 }

@@ -292,5 +292,26 @@
     "aankoopkoers": 0.037303,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-25T07:32:43.905412+00:00",
+    "type": "VERKOOP",
+    "munt": "BABY-EUR",
+    "aantal": 26455.542618060343,
+    "aankoopkoers": 0.007541,
+    "verkoopkoers": 0.008092,
+    "opbrengst_eur": 213.54,
+    "kosten_eur": 0.54,
+    "resultaat_eur": 13.54,
+    "reden": "Winstdoel bereikt"
+  },
+  {
+    "datum": "2026-11-25T07:32:43.905858+00:00",
+    "type": "AANKOOP",
+    "munt": "LISTA-EUR",
+    "aantal": 2116.971178416505,
+    "aankoopkoers": 0.094239,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

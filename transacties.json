@@ -313,5 +313,26 @@
     "aankoopkoers": 0.094239,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-25T09:21:19.642681+00:00",
+    "type": "VERKOOP",
+    "munt": "LISTA-EUR",
+    "aantal": 2116.971178416505,
+    "aankoopkoers": 0.094239,
+    "verkoopkoers": 0.087774,
+    "opbrengst_eur": 185.35,
+    "kosten_eur": 0.46,
+    "resultaat_eur": -14.65,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-25T09:21:19.643381+00:00",
+    "type": "AANKOOP",
+    "munt": "ZEUS-EUR",
+    "aantal": 48753.97040146457,
+    "aankoopkoers": 0.004092,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "cash": 4382.579639395691,
+  "cash": 4367.930130039485,
   "positions": {
     "BTC-EUR": {
       "buy_price": 55273.0,
@@ -9,14 +9,14 @@
       "buy_price": 0.037303,
       "amount": 5348.128753258264
     },
-    "LISTA-EUR": {
-      "buy_price": 0.094239,
-      "amount": 2116.971178416505
+    "ZEUS-EUR": {
+      "buy_price": 0.004092,
+      "amount": 48753.97040146457
     }
   },
   "alerts": {
     "BTC-EUR": true,
     "SKY-EUR": true,
-    "LISTA-EUR": true
+    "ZEUS-EUR": true
   }
 }

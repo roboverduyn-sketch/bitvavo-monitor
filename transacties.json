@@ -271,5 +271,26 @@
     "aankoopkoers": 0.007541,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-25T03:05:33.953063+00:00",
+    "type": "VERKOOP",
+    "munt": "INX-EUR",
+    "aantal": 57016.64672271879,
+    "aankoopkoers": 0.003499,
+    "verkoopkoers": 0.003381,
+    "opbrengst_eur": 192.29,
+    "kosten_eur": 0.48,
+    "resultaat_eur": -7.71,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-25T03:05:33.953539+00:00",
+    "type": "AANKOOP",
+    "munt": "SKY-EUR",
+    "aantal": 5348.128753258264,
+    "aankoopkoers": 0.037303,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

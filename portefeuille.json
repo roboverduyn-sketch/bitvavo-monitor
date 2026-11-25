@@ -1,22 +1,22 @@
 {
-  "cash": 4376.745234794421,
+  "cash": 4369.036584157509,
   "positions": {
     "BTC-EUR": {
       "buy_price": 55273.0,
       "amount": 0.00360937974929519
     },
-    "INX-EUR": {
-      "buy_price": 0.003499,
-      "amount": 57016.64672271879
-    },
     "BABY-EUR": {
       "buy_price": 0.007541,
       "amount": 26455.542618060343
+    },
+    "SKY-EUR": {
+      "buy_price": 0.037303,
+      "amount": 5348.128753258264
     }
   },
   "alerts": {
     "BTC-EUR": true,
-    "INX-EUR": true,
-    "BABY-EUR": true
+    "BABY-EUR": true,
+    "SKY-EUR": true
   }
 }

@@ -1,10 +1,6 @@
 {
-  "cash": 4354.0631581475345,
+  "cash": 4348.050978987628,
   "positions": {
-    "SKY-EUR": {
-      "buy_price": 0.037303,
-      "amount": 5348.128753258264
-    },
     "DRV-EUR": {
       "buy_price": 0.31,
       "amount": 643.5524092993323
@@ -12,11 +8,15 @@
     "WLFI-EUR": {
       "buy_price": 0.03791,
       "amount": 5262.496620490452
+    },
+    "LISTA-EUR": {
+      "buy_price": 0.096198,
+      "amount": 2073.860650770214
     }
   },
   "alerts": {
-    "SKY-EUR": true,
     "DRV-EUR": true,
-    "WLFI-EUR": true
+    "WLFI-EUR": true,
+    "LISTA-EUR": true
   }
 }

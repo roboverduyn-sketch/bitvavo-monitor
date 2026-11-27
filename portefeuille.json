@@ -1,10 +1,6 @@
 {
-  "cash": 4395.616228058629,
+  "cash": 4388.844447407381,
   "positions": {
-    "WLFI-EUR": {
-      "buy_price": 0.03791,
-      "amount": 5262.496620490452
-    },
     "XRP-EUR": {
       "buy_price": 0.85705,
       "amount": 232.77667216941023
@@ -12,11 +8,15 @@
     "NEAR-EUR": {
       "buy_price": 2.7512,
       "amount": 72.5142653688547
+    },
+    "SOL-EUR": {
+      "buy_price": 66.812,
+      "amount": 2.9860092031789653
     }
   },
   "alerts": {
-    "WLFI-EUR": true,
     "XRP-EUR": true,
-    "NEAR-EUR": true
+    "NEAR-EUR": true,
+    "SOL-EUR": true
   }
 }

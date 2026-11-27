@@ -481,5 +481,26 @@
     "aankoopkoers": 2.7512,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-27T13:27:03.975393+00:00",
+    "type": "VERKOOP",
+    "munt": "WLFI-EUR",
+    "aantal": 5262.496620490452,
+    "aankoopkoers": 0.03791,
+    "verkoopkoers": 0.03681,
+    "opbrengst_eur": 193.23,
+    "kosten_eur": 0.48,
+    "resultaat_eur": -6.77,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-27T13:27:03.976246+00:00",
+    "type": "AANKOOP",
+    "munt": "SOL-EUR",
+    "aantal": 2.9860092031789653,
+    "aankoopkoers": 66.812,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

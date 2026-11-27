@@ -502,5 +502,47 @@
     "aankoopkoers": 66.812,
     "bedrag_eur": 200.0,
     "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-27T15:06:46.903686+00:00",
+    "type": "VERKOOP",
+    "munt": "NEAR-EUR",
+    "aantal": 72.5142653688547,
+    "aankoopkoers": 2.7512,
+    "verkoopkoers": 2.6808,
+    "opbrengst_eur": 193.91,
+    "kosten_eur": 0.49,
+    "resultaat_eur": -6.09,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-27T15:06:46.904551+00:00",
+    "type": "VERKOOP",
+    "munt": "SOL-EUR",
+    "aantal": 2.9860092031789653,
+    "aankoopkoers": 66.812,
+    "verkoopkoers": 64.292,
+    "opbrengst_eur": 191.5,
+    "kosten_eur": 0.48,
+    "resultaat_eur": -8.5,
+    "reden": "Verliesgrens bereikt"
+  },
+  {
+    "datum": "2026-11-27T15:06:46.905407+00:00",
+    "type": "AANKOOP",
+    "munt": "UNI-EUR",
+    "aantal": 46.79283379448646,
+    "aankoopkoers": 4.2635,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
+  },
+  {
+    "datum": "2026-11-27T15:06:46.906234+00:00",
+    "type": "AANKOOP",
+    "munt": "INJ-EUR",
+    "aantal": 35.41840447437162,
+    "aankoopkoers": 5.6327,
+    "bedrag_eur": 200.0,
+    "kosten_eur": 0.5
   }
 ]

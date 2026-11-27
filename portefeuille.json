@@ -1,22 +1,22 @@
 {
-  "cash": 4388.844447407381,
+  "cash": 4374.25126183326,
   "positions": {
     "XRP-EUR": {
       "buy_price": 0.85705,
       "amount": 232.77667216941023
     },
-    "NEAR-EUR": {
-      "buy_price": 2.7512,
-      "amount": 72.5142653688547
+    "UNI-EUR": {
+      "buy_price": 4.2635,
+      "amount": 46.79283379448646
     },
-    "SOL-EUR": {
-      "buy_price": 66.812,
-      "amount": 2.9860092031789653
+    "INJ-EUR": {
+      "buy_price": 5.6327,
+      "amount": 35.41840447437162
     }
   },
   "alerts": {
     "XRP-EUR": true,
-    "NEAR-EUR": true,
-    "SOL-EUR": true
+    "UNI-EUR": true,
+    "INJ-EUR": true
   }
 }
